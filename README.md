@@ -31,7 +31,7 @@ trigger-rule:
       source: payload
       name: secret
 ```
-2. Run `./append-text.sh build` to create your secret token, build and start the webhook container.
+2. Run `./append-text.sh build` to create your secret token, build and start the webhook container. Make sure you enter the exact same secret token that was used in `hooks.yml`.
 
 The webhook URL will be `http://localhost:9000/hooks/append-text`. To access the container outside of localhost, replace `localhost` with the IP of the machine with the container.
 
