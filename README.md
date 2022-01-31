@@ -39,7 +39,7 @@ An `output` folder will be created to store the appended files that is mounted t
 
 ## How to Run
 
-1. Run `./append-text.sh run [webhook_url] [file]` from the machine running the container. Replace `[webhook_url]` with the webhook URL and `[file]` with the file path.
+1. Run `./append-text.sh run [webhook_url] [file]` from the machine running the container. Replace `[webhook_url]` with the **webhook URL** and `[file]` with the **file path**. _Specific position of arguments are required_.
 2. Enter the text to append to the file in the input prompt.
 3. Outputs will be placed in the `output` folder.
 
