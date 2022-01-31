@@ -21,7 +21,7 @@ Ensure `docker` and `docker-compose` is installed in your machine.
 
 ## Configuration
 
-1. In `hooks.yml`, enter your secret token. You will need this secret token later.
+1. In `hooks.yml`, replace `ENTER_SECRET_TOKEN_HERE` with your secret token. This secret token acts as a password to the webhook container. You will need this secret token later.
 
 ```
 trigger-rule:
