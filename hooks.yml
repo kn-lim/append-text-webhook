@@ -1,0 +1,15 @@
+- id: append-text
+  execute-command: "./run.sh"
+  command-working-directory: "/var/webhook"
+  pass-arguments-to-command:
+    - source: payload
+      name: file
+    - source: payload
+      name: text
+  trigger-rule:
+    match:
+      type: value
+      value: ENTER_SECRET_TOKEN_HERE
+      parameter:
+        source: payload
+        name: secret

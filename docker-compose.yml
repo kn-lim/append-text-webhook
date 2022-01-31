@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  webhook:
+    container_name: webhook
+    build: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./output/:/var/webhook/output
