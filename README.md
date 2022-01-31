@@ -1,6 +1,6 @@
 # append-text-webhook
 
-Creates a webhook docker container and appends text to a file using POST requests
+Creates a [webhook](https://github.com/adnanh/webhook) docker container and appends text to a file using POST requests
 
 ```
 usage: append-text.sh   build
