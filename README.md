@@ -25,12 +25,12 @@ Ensure `docker` and `docker-compose` is installed in your machine.
 
 ```
 trigger-rule:
-    match:
-      type: value
-      value: ENTER_SECRET_TOKEN_HERE
-      parameter:
-        source: payload
-        name: secret
+  match:
+    type: value
+    value: ENTER_SECRET_TOKEN_HERE
+    parameter:
+      source: payload
+      name: secret
 ```
 
 2. Run `./append-text.sh build` to create your secret token, build and start the webhook container.
@@ -41,7 +41,7 @@ An `output` folder will be created to store the appended files that is mounted t
 
 ## How to Run
 
-1. Run `./append-text.sh run [webhook_url] [file]` from the machine running the container. Replace `[webhook_url]` with the webhook URL and `[file]` with the file name. _File name cannot have spaces in it._
+1. Run `./append-text.sh run [webhook_url] [file]` from the machine running the container. Replace `[webhook_url]` with the webhook URL and `[file]` with the file path.
 
 2. Enter the text to append to the file in the input prompt.
 

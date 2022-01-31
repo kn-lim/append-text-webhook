@@ -1,9 +1,13 @@
 #!/bin/sh
 
 # $1 = File Name
-# $2 = Text
+# $2 = File
+# $3 = Text
 
 echo "File Name: $1"
-echo "Text: $2"
+echo "File Contents: $2"
+echo "Text: $3"
 
-echo $2 > output/$1
+content=$(echo $2 | base64 --decode)
+echo $content > output/$1
+echo $3 >> output/$1

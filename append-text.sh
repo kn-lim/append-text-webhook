@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Create secret token to authenticate POST request
 generate_secret () {
@@ -39,7 +39,8 @@ run () {
     usage
     return 1
   else
-    file=$2
+    file=$(cat $2 | base64)
+    file_name=$(basename $2)
   fi
 
   if [ ! -f SECRET ]; then
@@ -52,15 +53,15 @@ run () {
   printf "Enter Text to Append: "
   read -r text
 
-  payload_string='{"file":"%s","text":"%s","secret":"%s"}'
-  payload=$(printf "$payload_string" "$file" "$text" "$secret")
+  payload_string='{"file":"%s","file_name":"%s","text":"%s","secret":"%s"}'
+  payload=$(printf "$payload_string" "$file" "$file_name" "$text" "$secret")
 
   curl -H "Content-Type:application/json" -X POST -d "$payload" "$webhook_url"
 }
 
 usage () {
-  echo "usage: append-text.sh\tbuild\n                      \trun [webhook_url] [file]"
-  echo "\narguments:\n  build\t\t\tbuild and start the webhook container\n  run  \t\t\tappends text to file"
+  echo -e "usage: append-text.sh\tbuild\n                      \trun [webhook_url] [file]"
+  echo -e "\narguments:\n  build\t\t\tbuild and start the webhook container\n  run  \t\t\tappends text to file"
 }
 
 case $1 in

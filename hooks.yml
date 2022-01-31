@@ -3,6 +3,8 @@
   command-working-directory: "/var/webhook"
   pass-arguments-to-command:
     - source: payload
+      name: file_name
+    - source: payload
       name: file
     - source: payload
       name: text
