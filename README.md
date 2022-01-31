@@ -51,15 +51,10 @@ Run `./append-text.sh destroy` to destroy the webhook container and delete the s
 
 # Moving to Production on AWS
 
-## Changes
-
-- Will need to change to HTTPS requests for security, which requires SSL and proper certificates.
-
-## Plan
-
 1. Create an EC2 instance with minimal specs depending on how frequently the webhook will be used.
 2. Expose port 9000 on the EC2 instance.
 3. Clone this repo on the EC2 instance and follow the setup above.
 
 - To backup the appended files, mount a S3 bucket to the `output` folder in the EC2 instance.
+- Will need to change to HTTPS requests for security, which requires SSL and proper certificates.
 - Can modify the webhook's match rule to use whitelisting known IPs if needed.
